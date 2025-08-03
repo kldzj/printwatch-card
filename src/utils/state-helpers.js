@@ -17,7 +17,7 @@ export const isPrinting = (hass, config) => {
   
   if (PRINTING_STATES.includes(printStatus)) return true;
   if (NON_PRINTING_STATES.includes(currentStage)) return false;
-  if (currentStage === 'printing' || currentStage.startsWith('paused_')) return true;
+  if (currentStage === 'printing' || currentStage?.startsWith('paused_')) return true;
   
   return PRINTING_PROCESS_STATES.includes(currentStage);
 };
