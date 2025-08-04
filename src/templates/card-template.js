@@ -1,12 +1,12 @@
 // src/templates/card-template.js
 import { html } from 'lit';
-import { headerTemplate } from './components/header';
 import { cameraFeedTemplate } from './components/camera-feed';
-import { printStatusTemplate } from './components/print-status';
-import { temperatureDisplayTemplate } from './components/temperature-display';
-import { materialSlotsTemplate } from './components/material-slots';
-import { temperatureDialogTemplate } from './components/temperature-controls';
 import { confirmDialogTemplate } from './components/confirm-dialog';
+import { headerTemplate } from './components/header';
+import { materialSlotsTemplate } from './components/material-slots';
+import { printStatusTemplate } from './components/print-status';
+import { temperatureDialogTemplate } from './components/temperature-controls';
+import { temperatureDisplayTemplate } from './components/temperature-display';
 
 export const cardTemplate = (context) => {
   const { 
@@ -22,7 +22,8 @@ export const cardTemplate = (context) => {
     confirmDialog,
     setDialogConfig,
     handlePauseDialog,
-    handleStopDialog
+    handleStopDialog,
+    config,
   } = context;
 
   if (!entities || !hass) return html``;
@@ -47,7 +48,7 @@ export const cardTemplate = (context) => {
 
   return html`
     <div class="card">
-      ${headerTemplate(entities, controls)}
+      ${headerTemplate(entities, controls, config)}
       ${cameraFeedTemplate(cameraProps)}
       ${printStatusTemplate(entities, {
         hass,

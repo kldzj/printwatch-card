@@ -1,11 +1,11 @@
 // src/components/printwatch-card.js
 import { LitElement, html } from 'lit';
-import { cardTemplate } from '../templates/card-template';
+import { DEFAULT_CAMERA_REFRESH_RATE, DEFAULT_CONFIG } from '../constants/config';
 import { cardStyles } from '../styles/card-styles';
+import { cardTemplate } from '../templates/card-template';
 import { formatDuration, formatEndTime } from '../utils/formatters';
-import { isPrinting, isPaused, getAmsSlots, getEntityStates } from '../utils/state-helpers';
-import { DEFAULT_CONFIG, DEFAULT_CAMERA_REFRESH_RATE } from '../constants/config';
 import { localize } from '../utils/localize';
+import { getAmsSlots, getEntityStates, isPaused } from '../utils/state-helpers';
 
 class PrintWatchCard extends LitElement {
   static get properties() {
@@ -193,6 +193,7 @@ class PrintWatchCard extends LitElement {
       setDialogConfig,
       handlePauseDialog: () => this.handlePauseDialog(),
       handleStopDialog: () => this.handleStopDialog(),
+      config: this.config,
     });
   }
 
