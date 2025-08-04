@@ -19,6 +19,7 @@
         "last_print": "Letzter Druck: {name}",
         "printer_offline": "Drucker offline",
         "camera_unavailable": "Kamera nicht verfügbar",
+        "camera_error": "Fehler beim Laden der Kamera",
         "time": {
           "complete": "Fertig",
           "left": "Verbleibend",

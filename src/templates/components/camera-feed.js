@@ -7,7 +7,11 @@ export const cameraFeedTemplate = ({ isOnline, hasError, currentStage, entityPic
       <div class="offline-message">
         <ha-icon icon="mdi:printer-off"></ha-icon>
         <span>
-          ${isOnline ? localize.t('camera_unavailable') : localize.t('printer_offline')}
+          ${isOnline
+            ? hasError
+              ? localize.t("camera_error")
+              : localize.t("camera_unavailable")
+            : localize.t("printer_offline")}
         </span>
       </div>
     `;
